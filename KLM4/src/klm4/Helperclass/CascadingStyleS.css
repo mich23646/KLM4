@@ -22,16 +22,21 @@ Button{
     -fx-font-size       :25px;
     -fx-text-fill       :rgb(187,185,186);
     -fx-border-style    :solid;
-    -fx-border-width    :2px;
+    -fx-border-width    :1px;
     -fx-border-color    :white;
     -fx-background-color:rgb(248,248,248);
     -fx-cursor          :hand;
-    -fx-border-radius   :4px;   
+    -fx-border-radius   :3px;   
 }
-
+#ButtonRFC{
+    -fx-text-fill       :rgb(248,248,248);
+    -fx-background-color:rgb(187,185,186);   
+}
+#ButtonRFC:hover{
+    -fx-text-fill       :rgb(280,280,280);
+    -fx-background-color:rgb(140,140,140);
+}
 .button:hover {
     -fx-background-color:rgb(187,185,186);
-   // -fx-border-color    :black;
     -fx-text-fill       :rgb(248,248,248);
-    -fx-alignment       :center;
 }
