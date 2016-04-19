@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author Michiel
  */
-public class FXMLLoginScreenController implements Initializable {
+public class FXMLChecklistScreenController implements Initializable {
 
     /**
      * Initializes the controller class.
