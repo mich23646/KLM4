@@ -17,9 +17,11 @@ import javafx.stage.Stage;
  */
 public class KLM4 extends Application {
     
+    public Parent root;
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Screens/FXMLLoginScreen.fxml"));
+         root = FXMLLoader.load(getClass().getResource("Screens/FXMLLoginScreen.fxml"));
         
         Scene scene = new Scene(root);
         
