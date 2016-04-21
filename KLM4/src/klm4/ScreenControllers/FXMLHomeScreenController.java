@@ -5,18 +5,43 @@
  */
 package klm4.ScreenControllers;
 
+import klm4.ViewManager;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.Node;
 
 /**
  * FXML Controller class
  *
  * @author Michiel
  */
+
 public class FXMLHomeScreenController implements Initializable {
+
+    @FXML
+    private void HandleScanPackage(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        ViewManager view = new ViewManager();
+        view.getScene("Screens/FXMLQrScanner.fxml", node);
+}
+    
+    @FXML
+    private void HandleDeniedShipments(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        ViewManager view = new ViewManager();
+        view.getScene("Screens/FXMLDeniedShipmentList.fxml", node);
+}
+    
+    @FXML
+    private void HandleHandledShipments(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        ViewManager view = new ViewManager();
+        view.getScene("Screens/FXMLAcceptedShipmentList.fxml", node);
+}
+
 
    
     /**
@@ -25,7 +50,9 @@ public class FXMLHomeScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
+}
     
   
-}
+
