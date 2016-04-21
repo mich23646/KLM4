@@ -5,12 +5,15 @@
  */
 package klm4.ScreenControllers;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
 
 /**
  *
@@ -23,8 +26,10 @@ public class FXMLTemplateController implements Initializable {
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+     /*FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Open Resource File");
+        Window stage = null;
+        File showOpenDialog = fileChooser.showOpenDialog(stage); */
     }
     
     @Override
