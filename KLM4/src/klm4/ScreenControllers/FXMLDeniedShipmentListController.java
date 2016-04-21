@@ -7,18 +7,15 @@ package klm4.ScreenControllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
- * @author Michiel
+ * @author Naomi
  */
-public class FXMLHomeScreenController implements Initializable {
+public class FXMLDeniedShipmentListController implements Initializable {
 
-   
     /**
      * Initializes the controller class.
      */
@@ -27,5 +24,4 @@ public class FXMLHomeScreenController implements Initializable {
         // TODO
     }    
     
-  
 }
