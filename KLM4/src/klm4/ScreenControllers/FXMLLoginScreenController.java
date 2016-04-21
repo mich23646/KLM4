@@ -24,8 +24,25 @@ public class FXMLLoginScreenController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private TextField userName;
-    private TextField passWord;
+    private TextField txtUserName;
+    
+    @FXML
+    private TextField txtPassword;
+    
+    @FXML
+    private Label lblStatus;
+    
+    public void Login(ActionEvent action)
+    {
+        if(txtUserName.getText().equals("user") && txtPassword.getText().equals("pass"))
+        {
+            lblStatus.setText("Login Succces");
+        }
+        else
+        {
+            lblStatus.setText("Login Fail");
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
