@@ -19,7 +19,7 @@ public class KLM4 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Screens/FXMLQrScanner.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Screens/FXMLHomeScreen.fxml"));
         
         Scene scene = new Scene(root);
         
