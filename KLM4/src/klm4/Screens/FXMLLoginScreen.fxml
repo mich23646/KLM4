@@ -42,7 +42,7 @@
             </AnchorPane>
             <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" styleClass="header" text="Status" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <Label fx:id="lblStatus" alignment="CENTER" contentDisplay="CENTER" styleClass="header" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
                         <Font name="Helvetica" size="16.0" />
                      </font>

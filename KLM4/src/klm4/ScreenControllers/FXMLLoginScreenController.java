@@ -38,7 +38,6 @@ public class FXMLLoginScreenController implements Initializable {
     {
         if(txtUserName.getText().equals("user") && txtPassword.getText().equals("pass"))
         {
-            lblStatus.setText("Login Succces");
             Node node = (Node) event.getSource();
 
             ViewManager view = new ViewManager();
