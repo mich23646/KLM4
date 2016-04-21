@@ -39,7 +39,7 @@ public class FXMLLoginScreenController implements Initializable {
         if(txtUserName.getText().equals("user") && txtPassword.getText().equals("pass"))
         {
             Node node = (Node) event.getSource();
-
+            
             ViewManager view = new ViewManager();
             view.getScene("Screens/FXMLHomeScreen.fxml", node);
             System.out.println("USER LOGGED OUT.");
