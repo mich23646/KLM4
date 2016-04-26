@@ -18,6 +18,7 @@ import javafx.scene.control.ToggleButton;
  * @author Michiel
  */
 public class FXMLChecklistScreenController implements Initializable {
+
     @FXML
     private ToggleButton toggleButtonNegative;
     @FXML
@@ -59,6 +60,13 @@ public class FXMLChecklistScreenController implements Initializable {
         toggleButtonNeutral.setSelected(false); toggleButtonNeutral.setId("ButtonNeutral");
         toggleButtonNegative.setSelected(false); toggleButtonNegative.setId("ButtonNegative");
     }
+
+    /**
+     * Initializes the controller class.
+     */
+    
+    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
