@@ -25,12 +25,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="txtUserName" alignment="CENTER" promptText="UserName" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="txtUserName" alignment="CENTER" onKeyPressed="#handleEnterPressed" promptText="UserName" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Helvetica" size="16.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="txtPassword" alignment="CENTER" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <PasswordField fx:id="txtPassword" alignment="CENTER" onKeyPressed="#handleEnterPressed" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Helvetica" size="16.0" />
                </font>
