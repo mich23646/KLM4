@@ -5,9 +5,15 @@
  */
 package klm4.ScreenControllers;
 
+import klm4.ViewManager;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 
 /**
  * FXML Controller class
@@ -19,6 +25,15 @@ public class FXMLAcceptedShipmentListController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    public void Accept(ActionEvent event)
+    {
+        Node node = (Node) event.getSource();
+            
+        ViewManager view = new ViewManager();
+        view.getScene("Screens/FXMLHomeScreen.fxml", node);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
