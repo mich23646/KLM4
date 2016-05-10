@@ -44,6 +44,12 @@ public class FXMLHomeScreenController implements Initializable {
 
 
    
+    @FXML
+    private void HandleLogOut(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        ViewManager view = new ViewManager();
+        view.getScene("Screens/FXMLLoginScreen.fxml", node);
+    }
     /**
      * Initializes the controller class.
      */
