@@ -51,6 +51,11 @@
                               <Button mnemonicParsing="false" onAction="#HandleHandledShipments" text="Handled shipments" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <Button mnemonicParsing="false" text="Log Out" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="260.0" />
+                           </children>
+                        </AnchorPane>
                      </children>
                   </GridPane>
                </children></AnchorPane>
