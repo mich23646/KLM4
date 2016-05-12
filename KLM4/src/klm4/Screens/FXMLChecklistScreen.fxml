@@ -45,17 +45,17 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton id="ButtonNegative" fx:id="toggleButtonNegative" mnemonicParsing="false" onAction="#HandleButtonNegative" text="No" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ToggleButton id="ButtonNegative" fx:id="NegativeBooked" mnemonicParsing="false" onAction="#HandleButtonNegative" text="No" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                            <children>
-                              <ToggleButton id="ButtonPositive" fx:id="toggleButtonPositive" mnemonicParsing="false" onAction="#HandleButtonPositive" text="Yes" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ToggleButton id="ButtonPositive" fx:id="PositiveBooked" mnemonicParsing="false" onAction="#HandleButtonPositive" text="Yes" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <ToggleButton id="ButtonNeutral" fx:id="toggleButtonNeutral" layoutX="26.0" layoutY="21.0" mnemonicParsing="false" onAction="#HandleButtonNeutral" text="Booked" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ToggleButton id="ButtonNeutral" fx:id="NeutralBooked" layoutX="26.0" layoutY="21.0" mnemonicParsing="false" onAction="#HandleButtonNeutral" text="Booked" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -68,17 +68,17 @@
                      <children>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <ToggleButton id="ButtonNegative" fx:id="toggleButtonNegative1" mnemonicParsing="false" onAction="#HandleButtonNegative" text="11:50-12:10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ToggleButton id="ButtonNegative" fx:id="NegativeOnTime" mnemonicParsing="false" onAction="#HandleButtonNegative" text="11:50-12:10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                            <children>
-                              <Button id="ButtonPositive" fx:id="toggleButtonPositive1" mnemonicParsing="false" onAction="#HandleButtonPositive" text="12:00" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ToggleButton id="ButtonPositive" fx:id="PositiveOnTime" mnemonicParsing="false" onAction="#HandleButtonPositive" prefHeight="66.0" prefWidth="105.0" text="12" AnchorPane.leftAnchor="0.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
-                              <Button id="ButtonNeutral" fx:id="toggleButtonNeutral1" layoutX="26.0" layoutY="21.0" mnemonicParsing="false" onAction="#HandleButtonNeutral" text="On time" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <ToggleButton id="ButtonNeutral" fx:id="NeutralOnTime" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#HandleButtonNeutral" text="On Time" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -94,34 +94,34 @@
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <ToggleButton id="ButtonNegative" fx:id="toggleButtonNegative2" mnemonicParsing="false" onAction="#HandleButtonNegative" prefHeight="66.0" prefWidth="105.0" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
-                  <ToggleButton id="ButtonPositive" fx:id="toggleButtonPositive2" mnemonicParsing="false" onAction="#HandleButtonPositive" prefHeight="66.0" prefWidth="105.0" text="Correct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button id="ButtonNeutral" layoutX="105.0" layoutY="14.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="AWB Check" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNegative" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonPositive" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Correct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNeutral" layoutX="104.0" layoutY="14.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="AWB Check" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <Button id="ButtonNeutral" layoutX="106.0" layoutY="21.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Marge" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="0.0" />
-                  <ToggleButton id="ButtonNegative" fx:id="toggleButtonNegative3" mnemonicParsing="false" onAction="#HandleButtonNegative" prefHeight="66.0" prefWidth="105.0" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNegative" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonPositive" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Correct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNeutral" layoutX="83.0" mnemonicParsing="false" text="Mass" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <Button id="ButtonNeutral" layoutX="150.0" layoutY="33.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Gewicht" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonNegative" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonPositive" mnemonicParsing="false" text="Correct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNeutral" layoutX="112.0" layoutY="14.0" mnemonicParsing="false" text="Weight" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <Button id="ButtonNeutral" layoutX="131.0" layoutY="21.0" mnemonicParsing="false" text="Label Check" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonNegative" layoutX="-21.0" layoutY="2.0" mnemonicParsing="false" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonPositive" mnemonicParsing="false" text="Correct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNeutral" layoutX="112.0" layoutY="33.0" mnemonicParsing="false" text="Label Check" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <children>
-                  <Button id="ButtonNeutral" layoutX="105.0" layoutY="14.0" mnemonicParsing="false" text="Condition" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonNegative" layoutX="-14.0" layoutY="14.0" mnemonicParsing="false" text="Negatief" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="208.0" AnchorPane.topAnchor="0.0" />
                   <ToggleButton id="ButtonPositive" mnemonicParsing="false" text="Correct" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ToggleButton id="ButtonNeutral" layoutX="120.0" layoutY="21.0" mnemonicParsing="false" text="Condition" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>

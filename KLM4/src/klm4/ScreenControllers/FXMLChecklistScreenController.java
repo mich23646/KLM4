@@ -19,49 +19,76 @@ import javafx.scene.control.ToggleButton;
  */
 public class FXMLChecklistScreenController implements Initializable {
 
+    //Booked buttons
     @FXML
-    private ToggleButton toggleButtonNegative, toggleButtonNeutral, toggleButtonPositive;
+    private ToggleButton NegativeBooked, NeutralBooked,PositiveBooked ;
+    
+    //On time buttons
+    @FXML
+    private ToggleButton NegativeOnTime,NeutralOnTime ,PositiveOnTime ;
     
    
     @FXML
     private void HandleButtonNegative(ActionEvent event) 
     {
-        if(toggleButtonNegative.isSelected()){
-            toggleButtonNegative.setId("ButtonNegativePressed");            
-      }
-        else{
-            toggleButtonNegative.setId("ButtonNegative");
+        //Booked
+        if(NegativeBooked.isSelected())
+        {
+            NegativeBooked.setId("ButtonNegativePressed");            
         }
-        toggleButtonNeutral.setSelected(false); toggleButtonNeutral.setId("ButtonNeutral");
-        toggleButtonPositive.setSelected(false); toggleButtonPositive.setId("ButtonPositive");
+        else
+        {
+            NegativeBooked.setId("ButtonNegative");
+        }
+        
+        NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
+        PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
+        
+        
     }
     @FXML
     private void HandleButtonNeutral(ActionEvent event) 
     {
-        if(toggleButtonNeutral.isSelected())
+        //Booked
+        if(NeutralBooked.isSelected())
         {
-            toggleButtonNeutral.setId("ButtonNeutralPressed");
+            NeutralBooked.setId("ButtonNeutralPressed");
         }
         else
         {
-            toggleButtonNeutral.setId("ButtonNeutral");
+            NeutralBooked.setId("ButtonNeutral");
         }
-        toggleButtonNegative.setSelected(false); toggleButtonNegative.setId("ButtonNegative");
-        toggleButtonPositive.setSelected(false); toggleButtonPositive.setId("ButtonPositive");
+        NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
+        PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
+        
+        //OnTime
+        if(NeutralOnTime.isSelected())
+        {
+            NeutralOnTime.setId("ButtonNeutralPressed");
+        }
+        else
+        {
+            NeutralOnTime.setId("ButtonNeutral");
+        }
+        NegativeOnTime.setSelected(false); NegativeOnTime.setId("ButtonNegative");
+        PositiveOnTime.setSelected(false); PositiveOnTime.setId("ButtonPositive");
     }
     @FXML
     private void HandleButtonPositive(ActionEvent event) 
     {
-        if(toggleButtonPositive.isSelected())
+        //booked
+        if(PositiveBooked.isSelected())
         {
-            toggleButtonPositive.setId("ButtonPositivePressed");
+            PositiveBooked.setId("ButtonPositivePressed");
         }
         else
         {
-            toggleButtonPositive.setId("ButtonPositive");
+            PositiveBooked.setId("ButtonPositive");
         }
-        toggleButtonNeutral.setSelected(false); toggleButtonNeutral.setId("ButtonNeutral");
-        toggleButtonNegative.setSelected(false); toggleButtonNegative.setId("ButtonNegative");
+        NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
+        NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
+        
+        
     }
 
     /**
