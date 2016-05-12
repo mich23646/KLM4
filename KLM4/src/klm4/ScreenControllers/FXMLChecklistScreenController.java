@@ -20,15 +20,12 @@ import javafx.scene.control.ToggleButton;
 public class FXMLChecklistScreenController implements Initializable {
 
     @FXML
-    private ToggleButton toggleButtonNegative;
-    @FXML
-    private ToggleButton toggleButtonNeutral;
-    @FXML
-    private ToggleButton toggleButtonPositive;
+    private ToggleButton toggleButtonNegative, toggleButtonNeutral, toggleButtonPositive;
     
    
     @FXML
-    private void HandleButtonNegative(ActionEvent event) {
+    private void HandleButtonNegative(ActionEvent event) 
+    {
         if(toggleButtonNegative.isSelected()){
             toggleButtonNegative.setId("ButtonNegativePressed");            
       }
@@ -39,22 +36,28 @@ public class FXMLChecklistScreenController implements Initializable {
         toggleButtonPositive.setSelected(false); toggleButtonPositive.setId("ButtonPositive");
     }
     @FXML
-    private void HandleButtonNeutral(ActionEvent event) {
-        if(toggleButtonNeutral.isSelected()){
+    private void HandleButtonNeutral(ActionEvent event) 
+    {
+        if(toggleButtonNeutral.isSelected())
+        {
             toggleButtonNeutral.setId("ButtonNeutralPressed");
-      }
-        else{
+        }
+        else
+        {
             toggleButtonNeutral.setId("ButtonNeutral");
         }
         toggleButtonNegative.setSelected(false); toggleButtonNegative.setId("ButtonNegative");
         toggleButtonPositive.setSelected(false); toggleButtonPositive.setId("ButtonPositive");
     }
     @FXML
-    private void HandleButtonPositive(ActionEvent event) {
-        if(toggleButtonPositive.isSelected()){
+    private void HandleButtonPositive(ActionEvent event) 
+    {
+        if(toggleButtonPositive.isSelected())
+        {
             toggleButtonPositive.setId("ButtonPositivePressed");
-      }
-        else{
+        }
+        else
+        {
             toggleButtonPositive.setId("ButtonPositive");
         }
         toggleButtonNeutral.setSelected(false); toggleButtonNeutral.setId("ButtonNeutral");
@@ -68,7 +71,8 @@ public class FXMLChecklistScreenController implements Initializable {
     
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) 
+    {
         // TODO
     }    
 
