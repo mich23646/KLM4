@@ -11,17 +11,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
  *
  * @author Michiel
  */
+
 public class FXMLChecklistScreenController implements Initializable {
 
     //Booked buttons
     @FXML
-    private ToggleButton NegativeBooked, NeutralBooked,PositiveBooked ;
+    public ToggleButton NegativeBooked, NeutralBooked,PositiveBooked ;
     
     //On time buttons
     @FXML
@@ -43,6 +45,19 @@ public class FXMLChecklistScreenController implements Initializable {
         
         NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
         PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
+        
+        //On Time
+        if(NegativeOnTime.isSelected())
+        {
+            NegativeOnTime.setId("ButtonNegativePressed");            
+        }
+        else
+        {
+            NegativeOnTime.setId("ButtonNegative");
+        }
+        
+        NeutralOnTime.setSelected(false); NeutralOnTime.setId("ButtonNeutral");
+        PositiveOnTime.setSelected(false); PositiveOnTime.setId("ButtonPositive");
         
         
     }
@@ -73,6 +88,7 @@ public class FXMLChecklistScreenController implements Initializable {
         NegativeOnTime.setSelected(false); NegativeOnTime.setId("ButtonNegative");
         PositiveOnTime.setSelected(false); PositiveOnTime.setId("ButtonPositive");
     }
+    
     @FXML
     private void HandleButtonPositive(ActionEvent event) 
     {
@@ -88,15 +104,21 @@ public class FXMLChecklistScreenController implements Initializable {
         NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
         NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
         
+        //On Time
+        if(PositiveOnTime.isSelected())
+        {
+            PositiveOnTime.setId("ButtonPositivePressed");
+        }
+        else
+        {
+            PositiveOnTime.setId("ButtonPositive");
+        }
+        NeutralOnTime.setSelected(false); NeutralOnTime.setId("ButtonNeutral");
+        NegativeOnTime.setSelected(false); NegativeOnTime.setId("ButtonNegative");
+        
         
     }
-
-    /**
-     * Initializes the controller class.
-     */
     
-    
-
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
