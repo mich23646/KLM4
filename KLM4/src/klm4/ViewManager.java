@@ -36,7 +36,7 @@ public class ViewManager {
      */
     public void getLoginForm(Stage stage) throws IOException {
         Parent parent = FXMLLoader.load(getClass()
-                .getResource("Screens/FXMLChecklistScreen.fxml"));
+                .getResource("Screens/FXMLQrcodeScanner.fxml"));
         setScene(stage, parent);
     }
 
