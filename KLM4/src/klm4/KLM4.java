@@ -6,6 +6,7 @@
 package klm4;
 
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -16,6 +17,9 @@ public class KLM4 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+    stage.getIcons().add(
+    new Image("/klm4/Resources/favicon.png"));
+    stage.setTitle("KLM");
     ViewManager view = new ViewManager();
     view.getLoginForm(stage);
     }
