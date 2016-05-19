@@ -14,10 +14,11 @@ import javafx.stage.Stage;
  *
  * @author Michiel
  */
-public class KLM4 extends Application {
-    
+public class KLM4 extends Application 
+{
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws Exception 
+    {
     stage.getIcons().add(
     new Image("/klm4/Resources/favicon.png"));
     stage.setTitle("KLM");
@@ -25,22 +26,23 @@ public class KLM4 extends Application {
     view.getLoginForm(stage);
     
         //Database connection
-        try {
+        try 
+        {
             Database.openConnection();
-        } catch (SQLException e) {
+        } catch (SQLException e) 
+        {
             System.err.println("DATABASE CREDENTIALS PROBABLY INCORRECT: " + e);
         } 
-   
     }
-
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         launch(args);
 
-        try {
+        try 
+        {
             Database.closeConnection();
         } catch (SQLException e) {
             System.err.println(e);

@@ -45,31 +45,38 @@ public class FXMLLoginScreenController implements Initializable {
      */
     
     @FXML
-    public void handleEnterPressed(KeyEvent event) throws SQLException {
+    public void handleEnterPressed(KeyEvent event) throws SQLException 
+    {
         //OnKeyPressed only triggers on ENTER
-        if (event.getCode() == KeyCode.ENTER) {
+        if (event.getCode() == KeyCode.ENTER) 
+        {
             //Password + username validation check
-        if (Database.getAuthentication(txtUserName.getText(), txtPassword.getText())) {
+        if (Database.getAuthentication(txtUserName.getText(), txtPassword.getText())) 
+        {
             Node node = (Node) event.getSource();
 
             ViewManager view = new ViewManager();
             view.getScene("Screens/FXMLHomeScreen.fxml", node);
             System.out.println("USER LOGGED IN.");
-        } else {
+        } else 
+        {
             lblStatus.setText("Login Fail");
         }
     }
     }
 
-    public void Login(ActionEvent event) throws SQLException {
+    public void Login(ActionEvent event) throws SQLException 
+    {
             //Password + username validation check
-        if (Database.getAuthentication(txtUserName.getText(), txtPassword.getText())) {
+        if (Database.getAuthentication(txtUserName.getText(), txtPassword.getText())) 
+        {
             Node node = (Node) event.getSource();
 
             ViewManager view = new ViewManager();
             view.getScene("Screens/FXMLHomeScreen.fxml", node);
             System.out.println("USER LOGGED IN.");
-        } else {
+        } else 
+        {
             lblStatus.setText("Login Fail");
         }
     }

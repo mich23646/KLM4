@@ -25,80 +25,16 @@ public class FXMLChecklistScreenController implements Initializable {
     @FXML
     public ToggleButton NegativeBooked, NeutralBooked,PositiveBooked ;
     
-    @FXML
-    public ToggleGroup Booked = new ToggleGroup();
-    
-    @FXML
-    public ToggleGroup OnTime = new ToggleGroup();
     
     //On time buttons
     @FXML
     private ToggleButton NegativeOnTime,NeutralOnTime ,PositiveOnTime ;
    
-    @FXML
-    private void HandleButtonNegative(ActionEvent event) 
-    {
-        
-        //Booked
-        if(NegativeBooked.isSelected())
-        {
-            NegativeBooked.setId("ButtonNegativePressed");            
-        }
-        else
-        {
-            NegativeBooked.setId("ButtonNegative");
-        }
-        
-        NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
-        PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
-        
-    }
-    
-    @FXML
-    private void HandleButtonNeutral(ActionEvent event) 
-    {
-        //Booked
-        if(NeutralBooked.isSelected())
-        {
-            NeutralBooked.setId("ButtonNeutralPressed");
-        }
-        else
-        {
-            NeutralBooked.setId("ButtonNeutral");
-        }
-        NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
-        PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
-        
-    }
-    
-    @FXML
-    private void HandleButtonPositive(ActionEvent event) 
-    {
-        //booked
-        if(PositiveBooked.isSelected())
-        {
-            PositiveBooked.setId("ButtonPositivePressed");
-        }
-        else
-        {
-            PositiveBooked.setId("ButtonPositive");
-        }
-        NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
-        NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
-    }
+   
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         // TODO
-        //Booked
-        NegativeBooked.setToggleGroup(Booked);
-        NeutralBooked.setToggleGroup(Booked);
-        PositiveBooked.setToggleGroup(Booked);
-        
-        //OnTime
-        NegativeOnTime.setToggleGroup(OnTime);
-        NeutralOnTime.setToggleGroup(OnTime);
-        PositiveOnTime.setToggleGroup(OnTime);
     }    
 }
