@@ -25,14 +25,20 @@ public class FXMLChecklistScreenController implements Initializable {
     @FXML
     public ToggleButton NegativeBooked, NeutralBooked,PositiveBooked ;
     
+    @FXML
+    public ToggleGroup Booked = new ToggleGroup();
+    
+    @FXML
+    public ToggleGroup OnTime = new ToggleGroup();
+    
     //On time buttons
     @FXML
     private ToggleButton NegativeOnTime,NeutralOnTime ,PositiveOnTime ;
-    
    
     @FXML
     private void HandleButtonNegative(ActionEvent event) 
     {
+        
         //Booked
         if(NegativeBooked.isSelected())
         {
@@ -46,21 +52,8 @@ public class FXMLChecklistScreenController implements Initializable {
         NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
         PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
         
-        //On Time
-        if(NegativeOnTime.isSelected())
-        {
-            NegativeOnTime.setId("ButtonNegativePressed");            
-        }
-        else
-        {
-            NegativeOnTime.setId("ButtonNegative");
-        }
-        
-        NeutralOnTime.setSelected(false); NeutralOnTime.setId("ButtonNeutral");
-        PositiveOnTime.setSelected(false); PositiveOnTime.setId("ButtonPositive");
-        
-        
     }
+    
     @FXML
     private void HandleButtonNeutral(ActionEvent event) 
     {
@@ -76,17 +69,6 @@ public class FXMLChecklistScreenController implements Initializable {
         NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
         PositiveBooked.setSelected(false); PositiveBooked.setId("ButtonPositive");
         
-        //OnTime
-        if(NeutralOnTime.isSelected())
-        {
-            NeutralOnTime.setId("ButtonNeutralPressed");
-        }
-        else
-        {
-            NeutralOnTime.setId("ButtonNeutral");
-        }
-        NegativeOnTime.setSelected(false); NegativeOnTime.setId("ButtonNegative");
-        PositiveOnTime.setSelected(false); PositiveOnTime.setId("ButtonPositive");
     }
     
     @FXML
@@ -103,28 +85,20 @@ public class FXMLChecklistScreenController implements Initializable {
         }
         NeutralBooked.setSelected(false); NeutralBooked.setId("ButtonNeutral");
         NegativeBooked.setSelected(false); NegativeBooked.setId("ButtonNegative");
-        
-        //On Time
-        if(PositiveOnTime.isSelected())
-        {
-            PositiveOnTime.setId("ButtonPositivePressed");
-        }
-        else
-        {
-            PositiveOnTime.setId("ButtonPositive");
-        }
-        NeutralOnTime.setSelected(false); NeutralOnTime.setId("ButtonNeutral");
-        NegativeOnTime.setSelected(false); NegativeOnTime.setId("ButtonNegative");
-        
-        
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         // TODO
+        //Booked
+        NegativeBooked.setToggleGroup(Booked);
+        NeutralBooked.setToggleGroup(Booked);
+        PositiveBooked.setToggleGroup(Booked);
+        
+        //OnTime
+        NegativeOnTime.setToggleGroup(OnTime);
+        NeutralOnTime.setToggleGroup(OnTime);
+        PositiveOnTime.setToggleGroup(OnTime);
     }    
-
-    
-    
 }
