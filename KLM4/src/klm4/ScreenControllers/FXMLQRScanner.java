@@ -24,6 +24,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,29 +58,26 @@ public class FXMLQRScanner implements Initializable {
             image = webcam.getImage();
             imgScanResult.setImage(SwingFXUtils.toFXImage(image, null));
             webcam.close();
+        } else {
+            image = null;
         }
-        //FileChooser fileChooser = new FileChooser();
-        //fileChooser.setTitle("Open Resource File");
-        //Window stage = null;
-        //File showOpenDialog = fileChooser.showOpenDialog(stage);
-    }
-
-    public static void main(String[] args) throws WriterException, IOException,
-            NotFoundException {
-        String filePath = "D:/qrcode.35189288.png";
-        String charset = "UTF-8"; // or "ISO-8859-1"
         Map hintMap = new HashMap();
         hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
-
-        System.out.println("Data read from QR Code: "
-                + readQRCode(filePath, charset, hintMap));
+        try {
+            System.out.println(readQRCode(image, "ISO-8859-1", hintMap));
+        } catch (IOException | NotFoundException ex) {
+            Logger.getLogger(FXMLQRScanner.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public static String readQRCode(String filePath, String charset, Map hintMap)
+    public static void main(String[] args) {
+
+    }
+
+    public static String readQRCode(BufferedImage image, String charset, Map hintMap)
             throws FileNotFoundException, IOException, NotFoundException {
         BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(
-                new BufferedImageLuminanceSource(
-                        ImageIO.read(new FileInputStream(filePath)))));
+                new BufferedImageLuminanceSource(image)));
         Result qrCodeResult = new MultiFormatReader().decode(binaryBitmap,
                 hintMap);
         return qrCodeResult.getText();
