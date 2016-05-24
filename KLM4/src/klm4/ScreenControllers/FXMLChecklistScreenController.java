@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
@@ -22,12 +23,11 @@ public class FXMLChecklistScreenController implements Initializable {
 
     //Booked buttons
     @FXML
-    public ToggleButton NegativeBooked, NeutralBooked,PositiveBooked ;
-    
+    public ToggleButton NegativeBooked, NeutralBooked ,PositiveBooked ;
     
     //On time buttons
     @FXML
-    private ToggleButton NegativeOnTime,NeutralOnTime ,PositiveOnTime ;
+    private ToggleButton NegativeOnTime, NeutralOnTime , PositiveOnTime ;
    
     //AWB Check Buttons
     @FXML 
