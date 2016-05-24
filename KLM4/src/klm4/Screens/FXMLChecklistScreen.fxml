@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.image.*?>
@@ -35,13 +36,13 @@
                <children>
                   <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="313.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton fx:id="NegativeBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="No">
+                        <ToggleButton id="ButtonNegative" fx:id="NegativeBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="Booked" />
                            </toggleGroup>
                         </ToggleButton>
                         <ToggleButton fx:id="NeutralBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Booked" toggleGroup="$Booked" />
-                        <ToggleButton fx:id="PositiveBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Yes" toggleGroup="$Booked" />
+                        <ToggleButton id="ButtonPositive" fx:id="PositiveBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Booked" />
                      </children>
                   </HBox>
                </children>
@@ -50,13 +51,13 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton fx:id="NegativeOnTime" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="11:50-12:10">
+                        <ToggleButton fx:id="NegativeOnTime" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="OnTime" />
                            </toggleGroup>
                         </ToggleButton>
                         <ToggleButton fx:id="NeutralOnTime" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="On Time" toggleGroup="$OnTime" />
-                        <ToggleButton fx:id="PositiveOnTime" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="12" toggleGroup="$OnTime" />
+                        <ToggleButton fx:id="PositiveOnTime" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$OnTime" />
                      </children>
                   </HBox>
                </children></AnchorPane>
@@ -64,13 +65,13 @@
                <children>
                   <HBox layoutX="35.0" layoutY="-6.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
+                        <ToggleButton fx:id="NegativeAWB" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="AWB_Check" />
                            </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="AWB Check" toggleGroup="$AWB_Check" />
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$AWB_Check" />
+                        <ToggleButton fx:id="NeutralAWB" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="AWB Check" toggleGroup="$AWB_Check" />
+                        <ToggleButton fx:id="PositveAWB" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$AWB_Check" />
                      </children>
                   </HBox>
                </children></AnchorPane>
@@ -78,13 +79,13 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
+                        <ToggleButton fx:id="NegativeVolume" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="Mass" />
                            </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Mass" toggleGroup="$Mass" />
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Mass" />
+                        <ToggleButton fx:id="NeutralVolume" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Volume" toggleGroup="$Mass" />
+                        <ToggleButton fx:id="PositveVolume" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Mass" />
                      </children>
                   </HBox>
                </children>
@@ -93,13 +94,13 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
+                        <ToggleButton fx:id="NegativeWeight" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="Weight" />
                            </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Weight" toggleGroup="$Weight" />
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Weight" />
+                        <ToggleButton fx:id="NeutralWeight" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Weight" toggleGroup="$Weight" />
+                        <ToggleButton fx:id="PositiveWeight" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Weight" />
                      </children>
                   </HBox>
                </children></AnchorPane>
@@ -107,13 +108,13 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
+                        <ToggleButton fx:id="NegativeLabel" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="Label_Check" />
                            </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Label Check" toggleGroup="$Label_Check" />
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Label_Check" />
+                        <ToggleButton fx:id="NeutralLabel" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Label Check" toggleGroup="$Label_Check" />
+                        <ToggleButton fx:id="PositiveLabel" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Label_Check" />
                      </children>
                   </HBox>
                </children></AnchorPane>
@@ -121,19 +122,19 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
+                        <ToggleButton fx:id="NegativeCondition" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="Condition" />
                            </toggleGroup>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Condition" toggleGroup="$Condition" />
-                        <ToggleButton mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Condition" />
+                        <ToggleButton fx:id="NeutralCondition" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Condition" toggleGroup="$Condition" />
+                        <ToggleButton fx:id="PositiveCondition" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Condition" />
                      </children>
                   </HBox>
                </children></AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
-                  <Button layoutX="140.0" layoutY="21.0" mnemonicParsing="false" text="RFC" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="140.0" layoutY="21.0" mnemonicParsing="false" onAction="#OnAction" text="RFC" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
             <AnchorPane prefHeight="150.0" prefWidth="1086.0" styleClass="header1" GridPane.columnIndex="1">
                <children>

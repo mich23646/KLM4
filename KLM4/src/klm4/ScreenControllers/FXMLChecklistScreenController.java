@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
@@ -30,7 +29,27 @@ public class FXMLChecklistScreenController implements Initializable {
     @FXML
     private ToggleButton NegativeOnTime,NeutralOnTime ,PositiveOnTime ;
    
+    //AWB Check Buttons
+    @FXML 
+    private ToggleButton NegativeAWB, NeutralAWB, PositveAWB; 
+    
+    //Volume Buttons
+    @FXML
+    private ToggleButton NegativeVolume, NeutralVolume, PositveVolume;
+    
+    //Weight buttons
+    @FXML
+    private ToggleButton NegativeWeight, NeutralWeight, PositiveWeight;
    
+    //Label Check
+    @FXML 
+    private ToggleButton NegativeLabel, NeutralLabel, PositiveLabel;
+    
+    @FXML
+    private ToggleButton NegativeCondition, NeutralCondition, PositiveCondition;
+    
+    @FXML
+    private Button FXML;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
