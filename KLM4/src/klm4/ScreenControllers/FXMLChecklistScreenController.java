@@ -48,8 +48,6 @@ public class FXMLChecklistScreenController implements Initializable {
     @FXML
     private ToggleButton NegativeCondition, NeutralCondition, PositiveCondition;
     
-    @FXML
-    private Button FXML;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
