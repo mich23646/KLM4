@@ -18,6 +18,13 @@ AnchorPane{
     -fx-background-repeat: no-repeat;
     -fx-background-color: rgb(248,248,248);
 }
+.header2{
+    -fx-background-image: url("http://i.imgur.com/nme80Zd.png");
+    -fx-background-size: contain;  
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: rgb(248,248,248);
+}
 Button{
     -fx-font-size       :25px;
     -fx-text-fill       :rgb(187,185,186);
@@ -38,5 +45,42 @@ Button{
 }
 .button:hover {
     -fx-background-color:rgb(187,185,186);
-    -fx-text-fill       :rgb(248,248,248);
+    -fx-text-fill:rgb(248,248,248);
+}
+#ButtonNegative{
+    -fx-background-color:rgb(193,99,99);
+    -fx-border-width:0px;
+    -fx-border-radius:0px;
+    -fx-text-fill: rgb(248,248,248);
+    -fx-font-size:16px;
+}
+
+#ButtonNegative#ButtonNegativePressed{
+    -fx-background-color:rgb(173,79,79);
+    -fx-text-fill:rgb(248,248,248);
+    -fx-font-size:16px;
+}
+#ButtonNeutral{
+    -fx-background-color:rgb(248,248,248);
+    -fx-border-width:0px;
+    -fx-border-radius: 0px;
+    -fx-font-size:16px;
+    -fx-text-fill:rgb(187,185,186);
+}
+#ButtonNeutral#ButtonNeutralPressed{
+    -fx-background-color:rgb(228,228,228);
+    -fx-font-size:16px;
+    -fx-text-fill:rgb(187,185,186);
+}
+#ButtonPositive{
+    -fx-background-color:rgb(114,194,99);
+    -fx-border-width:0px;
+    -fx-border-radius: 0px;
+    -fx-text-fill: rgb(248,248,248);
+    -fx-font-size:16px;
+}
+#ButtonPositive#ButtonPositivePressed{
+    -fx-background-color:rgb(94,174,79);
+    -fx-text-fill: rgb(248,248,248);
+    -fx-font-size:16px;
 }
