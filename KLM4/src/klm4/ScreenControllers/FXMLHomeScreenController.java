@@ -25,7 +25,7 @@ public class FXMLHomeScreenController implements Initializable {
     private void HandleScanPackage(ActionEvent event) {
         Node node = (Node) event.getSource();
         ViewManager view = new ViewManager();
-        view.getScene("Screens/FXMLQrScanner.fxml", node);
+        view.getScene("Screens/FXMLQrcodeScanner.fxml", node);
 }
     
     @FXML
