@@ -30,12 +30,14 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import javax.imageio.ImageIO;
+import klm4.ViewManager;
 
 /**
  *
@@ -43,16 +45,16 @@ import javax.imageio.ImageIO;
  */
 public class FXMLQRScanner implements Initializable {
 
+    public static String barCode;
     @FXML
     private Label label;
     @FXML
     private ImageView imgScanResult;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    public void handleButtonAction(ActionEvent event) {
         BufferedImage image;
         Webcam webcam = Webcam.getDefault();
-        String barCode;
         barCode = null;
         
         webcam.open();
@@ -75,6 +77,11 @@ public class FXMLQRScanner implements Initializable {
             }
         }
         webcam.close();
+        System.out.println(barCode); 
+        
+        Node node = (Node) event.getSource();
+        ViewManager view = new ViewManager();
+        view.getScene("Screens/FXMLChecklistScreen.fxml", node);
     }
 
     
