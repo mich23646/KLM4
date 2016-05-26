@@ -52,24 +52,33 @@ public class FXMLQRScanner implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         BufferedImage image;
         Webcam webcam = Webcam.getDefault();
+        String barCode;
+        barCode = null;
         
-        if (webcam != null) {
-            webcam.open();
-            image = webcam.getImage();
-            imgScanResult.setImage(SwingFXUtils.toFXImage(image, null));
-            webcam.close();
-        } else {
-            image = null;
+        webcam.open();
+        while ( barCode == null){
+            if (webcam != null) {
+                
+                image = webcam.getImage();
+                imgScanResult.setImage(SwingFXUtils.toFXImage(image, null));
+                
+            } else {
+                image = null;
+            }
+            Map hintMap = new HashMap();
+            hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+            try {
+                barCode = readQRCode(image, "ISO-8859-1", hintMap);
+                System.out.println(barCode);
+            } catch (IOException | NotFoundException ex) {
+                Logger.getLogger(FXMLQRScanner.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        Map hintMap = new HashMap();
-        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
-        try {
-            System.out.println(readQRCode(image, "ISO-8859-1", hintMap));
-        } catch (IOException | NotFoundException ex) {
-            Logger.getLogger(FXMLQRScanner.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        webcam.close();
     }
 
+    
+    
     public static void main(String[] args) {
 
     }

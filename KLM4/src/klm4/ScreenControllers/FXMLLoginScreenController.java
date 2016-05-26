@@ -5,8 +5,10 @@
  */
 package klm4.ScreenControllers;
 
+import klm4.Database;
 import klm4.ViewManager;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,33 +41,42 @@ public class FXMLLoginScreenController implements Initializable {
     /**
      *
      * @param event
+     * @throws java.sql.SQLException
      */
     
     @FXML
-    public void handleEnterPressed(KeyEvent event) {
+    public void handleEnterPressed(KeyEvent event) throws SQLException 
+    {
         //OnKeyPressed only triggers on ENTER
-        if (event.getCode() == KeyCode.ENTER) {
+        if (event.getCode() == KeyCode.ENTER) 
+        {
             //Password + username validation check
-            if (txtUserName.getText().equals("user") && txtPassword.getText().equals("pass")) {
-                Node node = (Node) event.getSource();
-
-                ViewManager view = new ViewManager();
-                view.getScene("Screens/FXMLHomeScreen.fxml", node);
-                System.out.println("USER LOGGED IN.");
-            } else {
-                lblStatus.setText("Login Fail");
-            }
-        }
-    }
-
-    public void Login(ActionEvent event) {
-        if (txtUserName.getText().equals("user") && txtPassword.getText().equals("pass")) {
+        if (Database.getAuthentication(txtUserName.getText(), txtPassword.getText())) 
+        {
             Node node = (Node) event.getSource();
 
             ViewManager view = new ViewManager();
             view.getScene("Screens/FXMLHomeScreen.fxml", node);
             System.out.println("USER LOGGED IN.");
-        } else {
+        } else 
+        {
+            lblStatus.setText("Login Fail");
+        }
+    }
+    }
+
+    public void Login(ActionEvent event) throws SQLException 
+    {
+            //Password + username validation check
+        if (Database.getAuthentication(txtUserName.getText(), txtPassword.getText())) 
+        {
+            Node node = (Node) event.getSource();
+
+            ViewManager view = new ViewManager();
+            view.getScene("Screens/FXMLHomeScreen.fxml", node);
+            System.out.println("USER LOGGED IN.");
+        } else 
+        {
             lblStatus.setText("Login Fail");
         }
     }
