@@ -76,7 +76,7 @@ public class FXMLQRScanner implements Initializable {
         }
         webcam.close();
     }
-    
+
     
     
     public static void main(String[] args) {

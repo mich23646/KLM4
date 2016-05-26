@@ -19,7 +19,8 @@ import javafx.scene.control.ToggleGroup;
  * @author Michiel
  */
 
-public class FXMLChecklistScreenController implements Initializable {
+public class FXMLChecklistScreenController implements Initializable 
+{
 
     //Booked buttons
     @FXML

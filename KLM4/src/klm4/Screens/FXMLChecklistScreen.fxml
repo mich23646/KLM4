@@ -36,13 +36,13 @@
                <children>
                   <HBox layoutX="-1.0" prefHeight="100.0" prefWidth="313.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ToggleButton id="ButtonNegative" fx:id="NegativeBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
+                        <ToggleButton fx:id="NegativeBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Denied">
                            <toggleGroup>
                               <ToggleGroup fx:id="Booked" />
                            </toggleGroup>
                         </ToggleButton>
                         <ToggleButton fx:id="NeutralBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" selected="true" text="Booked" toggleGroup="$Booked" />
-                        <ToggleButton id="ButtonPositive" fx:id="PositiveBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Booked" />
+                        <ToggleButton fx:id="PositiveBooked" mnemonicParsing="false" prefHeight="66.0" prefWidth="105.0" text="Accepted" toggleGroup="$Booked" />
                      </children>
                   </HBox>
                </children>
