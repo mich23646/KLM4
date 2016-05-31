@@ -35,6 +35,7 @@ public class FXMLChecklistScreenController implements Initializable
     String lableCheck;
     String condition1;
     String weight;
+    
     //Booked buttons
     @FXML
     public ToggleButton NegativeBooked, NeutralBooked ,PositiveBooked ;
@@ -107,5 +108,6 @@ public class FXMLChecklistScreenController implements Initializable
         NeutralLabel.setText("Lable Check\n        " + lableCheck);
         NeutralCondition.setText("Condition\n    " + condition1);
         NeutralWeight.setText("Weight\n  " + weight);
-    }    
+    } 
+        
 }
