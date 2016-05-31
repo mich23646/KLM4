@@ -22,10 +22,6 @@ import javafx.scene.Node;
  */
 public class FXMLAcceptedShipmentListController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    
     public void Accept(ActionEvent event)
     {
         Node node = (Node) event.getSource();
