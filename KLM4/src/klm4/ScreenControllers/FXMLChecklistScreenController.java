@@ -68,31 +68,31 @@ public class FXMLChecklistScreenController implements Initializable
     {
         try {
             String barCode2 = "0101234567890128";
-            ResultSet resultSet = Database.selectQuery("SELECT booked FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            ResultSet resultSet = Database.selectQuery("SELECT booked FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             booked = resultSet.getString("booked");
             
-            resultSet = Database.selectQuery("SELECT ontime FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            resultSet = Database.selectQuery("SELECT ontime FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             onTime = resultSet.getString("ontime");
             
-            resultSet = Database.selectQuery("SELECT awb FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            resultSet = Database.selectQuery("SELECT awb FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             awb = resultSet.getString("awb");
             
-            resultSet = Database.selectQuery("SELECT volume FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            resultSet = Database.selectQuery("SELECT volume FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             volume = resultSet.getString("volume");
             
-            resultSet = Database.selectQuery("SELECT weight FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            resultSet = Database.selectQuery("SELECT weight FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             weight = resultSet.getString("weight");
             
-            resultSet = Database.selectQuery("SELECT lable FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            resultSet = Database.selectQuery("SELECT lable FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             lableCheck = resultSet.getString("lable");
             
-            resultSet = Database.selectQuery("SELECT condition1 FROM barcode_gegevens WHERE barcodeID = " + barCode2);
+            resultSet = Database.selectQuery("SELECT condition1 FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             condition1 = resultSet.getString("condition1");
             

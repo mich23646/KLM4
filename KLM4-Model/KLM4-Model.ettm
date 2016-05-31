@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TypeManagement projectID="DCE.B453770B-BA6C-A51F-6C58-F328D2494E4A">
+	<Locations nextID="1">
+	<Location locID="T.0" href=".\KLM4-Model.etup"/></Locations>
+
+   <Types>
+   <Type id="DCE.448F6C84-1898-3540-6C2F-A0D7CE0EC81D" location="T.0" name="Unnamed"/></Types>
+
+	<IrresolvableTypes>
+	</IrresolvableTypes>
+
+</TypeManagement>
