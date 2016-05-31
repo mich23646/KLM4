@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyEvent;
 import klm4.Database;
 import static klm4.ScreenControllers.FXMLQRScanner.barCode;
 
@@ -28,13 +29,13 @@ import static klm4.ScreenControllers.FXMLQRScanner.barCode;
 public class FXMLChecklistScreenController implements Initializable 
 {
 
-    String booked;
-    String onTime;
-    String awb;
-    String volume;
-    String lableCheck;
-    String condition1;
-    String weight;
+    String booked = "booked";
+    String onTime = "onTime";
+    String awb = "awb";
+    String volume = "volume";
+    String lable = "lable";
+    String condition1 = "condition1";
+    String weight = "weight";
     //Booked buttons
     @FXML
     public ToggleButton NegativeBooked, NeutralBooked ,PositiveBooked ;
@@ -63,39 +64,25 @@ public class FXMLChecklistScreenController implements Initializable
     private ToggleButton NegativeCondition, NeutralCondition, PositiveCondition;
     
     
+        @FXML
+    public void handleNegativeBooked(ActionEvent event) throws SQLException 
+    {
+        Database.insertQuery("INSERT INTO barcode " + "(booked) "
+        + "VALUES " + (0));
+        
+    } 
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         try {
-            String barCode2 = "0101234567890128";
-            ResultSet resultSet = Database.selectQuery("SELECT booked FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            booked = resultSet.getString("booked");
-            
-            resultSet = Database.selectQuery("SELECT ontime FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            onTime = resultSet.getString("ontime");
-            
-            resultSet = Database.selectQuery("SELECT awb FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            awb = resultSet.getString("awb");
-            
-            resultSet = Database.selectQuery("SELECT volume FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            volume = resultSet.getString("volume");
-            
-            resultSet = Database.selectQuery("SELECT weight FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            weight = resultSet.getString("weight");
-            
-            resultSet = Database.selectQuery("SELECT lable FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            lableCheck = resultSet.getString("lable");
-            
-            resultSet = Database.selectQuery("SELECT condition1 FROM barcode_gegevens WHERE barcodeID = " + barCode);
-            resultSet.next();
-            condition1 = resultSet.getString("condition1");
-            
+            booked = selectData(booked, barCode);
+            onTime = selectData(onTime, barCode);
+            volume = selectData(volume, barCode);
+            lable = selectData(lable, barCode);
+            condition1 = selectData(condition1, barCode);
+            weight = selectData(weight, barCode);
             
         } catch (SQLException ex) {
             Logger.getLogger(FXMLChecklistScreenController.class.getName()).log(Level.SEVERE, null, ex);
@@ -104,8 +91,25 @@ public class FXMLChecklistScreenController implements Initializable
         NeutralOnTime.setText("OnTime\n  " + onTime);
         NeutralAWB.setText("AWB\n " + awb);
         NeutralVolume.setText("Volume\n " + volume);
-        NeutralLabel.setText("Lable Check\n        " + lableCheck);
+        NeutralLabel.setText("Lable Check\n        " + lable);
         NeutralCondition.setText("Condition\n    " + condition1);
         NeutralWeight.setText("Weight\n  " + weight);
-    }    
+        
+        
+        try {
+            Database.insertQuery("INSERT INTO barcode " + "(barcodeID) "
+                    + "VALUES " + (barCode));
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLChecklistScreenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+        public String selectData(String textField, String barCode) throws SQLException {
+            
+            ResultSet resultSet = Database.selectQuery("SELECT " + textField + " FROM barcode_gegevens WHERE barcodeID = " + barCode);
+            resultSet.next();
+            textField = resultSet.getString(textField);
+            return textField;
+        }
 }

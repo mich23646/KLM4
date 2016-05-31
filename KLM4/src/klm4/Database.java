@@ -21,7 +21,7 @@ public class Database {
     private static Connection connection;
     private final static String DATABASE = "jdbc:mysql://localhost:3306/klm";
     private final static String USERNAME = "root";
-    private final static String PASSWORD = "Ahlers4us2";
+    private final static String PASSWORD = "jvdlee";
     public static boolean authenticate;
     public static String authUsername;
     
