@@ -41,8 +41,6 @@ public class FXMLHomeScreenController implements Initializable {
         ViewManager view = new ViewManager();
         view.getScene("Screens/FXMLAcceptedShipmentList.fxml", node);
 }
-
-
    
     @FXML
     private void HandleLogOut(ActionEvent event) {
