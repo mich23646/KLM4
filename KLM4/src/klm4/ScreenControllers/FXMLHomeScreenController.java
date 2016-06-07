@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -19,33 +20,36 @@ import javafx.scene.Node;
  * @author Michiel
  */
 
-public class FXMLHomeScreenController implements Initializable {
 
+public class FXMLHomeScreenController extends FXMLScreen {
+
+
+    
     @FXML
     private void HandleScanPackage(ActionEvent event) {
         Node node = (Node) event.getSource();
-        ViewManager view = new ViewManager();
+        ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLQrcodeScanner.fxml", node);
 }
     
     @FXML
     private void HandleDeniedShipments(ActionEvent event) {
         Node node = (Node) event.getSource();
-        ViewManager view = new ViewManager();
+        ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLDeniedShipmentList.fxml", node);
 }
     
     @FXML
     private void HandleHandledShipments(ActionEvent event) {
         Node node = (Node) event.getSource();
-        ViewManager view = new ViewManager();
+        ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLAcceptedShipmentList.fxml", node);
 }
    
     @FXML
     private void HandleLogOut(ActionEvent event) {
         Node node = (Node) event.getSource();
-        ViewManager view = new ViewManager();
+        ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLLoginScreen.fxml", node);
     }
     /**

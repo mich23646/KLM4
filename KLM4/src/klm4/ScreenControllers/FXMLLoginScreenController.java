@@ -18,13 +18,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author Rachel
  */
-public class FXMLLoginScreenController implements Initializable {
+public class FXMLLoginScreenController extends FXMLScreen {
 
     /**
      * Initializes the controller class.
@@ -55,8 +56,8 @@ public class FXMLLoginScreenController implements Initializable {
         {
             Node node = (Node) event.getSource();
 
-            ViewManager view = new ViewManager();
-            view.getScene("Screens/FXMLHomeScreen.fxml", node);
+            ViewManager view = new ViewManager(root);
+            view.getScene("Screens/FXMLChecklistScreen.fxml", node);
             System.out.println("USER LOGGED IN.");
         } else 
         {
@@ -72,7 +73,7 @@ public class FXMLLoginScreenController implements Initializable {
         {
             Node node = (Node) event.getSource();
 
-            ViewManager view = new ViewManager();
+            ViewManager view = new ViewManager(root);
             view.getScene("Screens/FXMLHomeScreen.fxml", node);
             System.out.println("USER LOGGED IN.");
         } else 

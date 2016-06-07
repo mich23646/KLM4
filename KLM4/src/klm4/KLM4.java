@@ -22,7 +22,7 @@ public class KLM4 extends Application
     stage.getIcons().add(
     new Image("/klm4/Resources/favicon.png"));
     stage.setTitle("KLM");
-    ViewManager view = new ViewManager();
+    ViewManager view = new ViewManager(stage);
     view.getLoginForm(stage);
     
         //Database connection

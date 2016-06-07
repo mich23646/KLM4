@@ -35,6 +35,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 import javax.imageio.ImageIO;
 import klm4.ViewManager;
@@ -43,8 +44,8 @@ import klm4.ViewManager;
  *
  * @author Michiel
  */
-public class FXMLQRScanner implements Initializable {
-
+public class FXMLQRScanner extends FXMLScreen {
+  
     public static String barCode;
     @FXML
     private Label label;
@@ -80,11 +81,11 @@ public class FXMLQRScanner implements Initializable {
         System.out.println(barCode); 
         
         Node node = (Node) event.getSource();
-        ViewManager view = new ViewManager();
+        ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLChecklistScreen.fxml", node);
     }
 
-    
+ 
     
     public static void main(String[] args) {
 

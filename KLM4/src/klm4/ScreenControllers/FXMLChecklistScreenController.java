@@ -5,20 +5,34 @@
  */
 package klm4.ScreenControllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import klm4.Database;
 import static klm4.ScreenControllers.FXMLQRScanner.barCode;
+import klm4.ViewManager;
 
 /**
  * FXML Controller class
@@ -26,7 +40,7 @@ import static klm4.ScreenControllers.FXMLQRScanner.barCode;
  * @author Michiel
  */
 
-public class FXMLChecklistScreenController implements Initializable 
+public class FXMLChecklistScreenController extends FXMLScreen
 {
 
     String booked = "booked";
@@ -72,6 +86,28 @@ public class FXMLChecklistScreenController implements Initializable
         
     } 
     
+    @FXML
+    public void RFCsent(ActionEvent event) throws IOException
+    {
+       FXMLLoader loader = new FXMLLoader();
+       Parent parent = loader.load(getClass().getResource("/klm4/Screens/FXMLAcceptedShipmentPop.fxml").openStream());
+        FXMLScreen screen = loader.getController();
+        Stage stage = new Stage();
+        screen.start(stage);
+        stage.setTitle("RFC has been sent");
+        stage.setScene(new Scene(parent, 260, 230, Color.LIGHTCYAN));
+        // Deze
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(root);
+        stage.showAndWait();
+        
+        Node node = (Node) event.getSource();
+            
+        ViewManager view = new ViewManager(root);
+        view.getScene("/klm4/Screens/FXMLHomeScreen.fxml", node);
+        
+       
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -113,3 +149,4 @@ public class FXMLChecklistScreenController implements Initializable
             return textField;
         }
 }
+

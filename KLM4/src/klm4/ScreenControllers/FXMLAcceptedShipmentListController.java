@@ -14,21 +14,23 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author Naomi
  */
-public class FXMLAcceptedShipmentListController implements Initializable {
-
+public class FXMLAcceptedShipmentListController extends FXMLScreen {
+    
     public void Accept(ActionEvent event)
     {
         Node node = (Node) event.getSource();
             
-        ViewManager view = new ViewManager();
+        ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLHomeScreen.fxml", node);
     }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

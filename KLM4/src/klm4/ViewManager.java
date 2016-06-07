@@ -11,12 +11,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import klm4.ScreenControllers.FXMLScreen;
 
 /**
  *
  * @author Jelle
  */
 public class ViewManager {
+    
+    private final Stage root;
+
+    public ViewManager(Stage root) {
+        this.root = root;
+    }
+    
     /**
      * Helper to set a new scene/view
      *
@@ -49,8 +57,9 @@ public class ViewManager {
         try {
             Stage stage = (Stage) node.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader();
-            Parent parent = loader.load(getClass().getResource(view));
-            loader.getController();
+            Parent parent = loader.load(getClass().getResource(view).openStream());
+            FXMLScreen screen = loader.getController();
+            screen.start(stage);
             setScene(stage, parent);
         } catch(IOException e) {
             System.err.println(e);

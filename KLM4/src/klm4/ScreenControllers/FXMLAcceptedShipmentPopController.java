@@ -7,14 +7,17 @@ package klm4.ScreenControllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import klm4.ViewManager;
 
 /**
  * FXML Controller class
  *
  * @author Naomi
  */
-public class FXMLAcceptedShipmentPopController implements Initializable {
+public class FXMLAcceptedShipmentPopController extends FXMLScreen {
 
     /**
      * Initializes the controller class.
@@ -23,5 +26,12 @@ public class FXMLAcceptedShipmentPopController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+        public void Menu(ActionEvent event)
+    {
+        Node node = (Node) event.getSource();
+        
+        root.close();
+    }
     
 }
