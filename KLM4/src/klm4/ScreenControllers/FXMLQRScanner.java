@@ -21,6 +21,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -30,6 +31,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -38,6 +40,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javax.imageio.ImageIO;
+import klm4.Database;
 import klm4.ViewManager;
 
 /**
@@ -49,6 +52,8 @@ public class FXMLQRScanner extends FXMLScreen {
     public static String barCode;
     @FXML
     private Label label;
+    @FXML
+    private Label QRMessage;
     @FXML
     private ImageView imgScanResult;
 
@@ -74,15 +79,30 @@ public class FXMLQRScanner extends FXMLScreen {
                 barCode = readQRCode(image, "ISO-8859-1", hintMap);
                 System.out.println(barCode);
             } catch (IOException | NotFoundException ex) {
-                Logger.getLogger(FXMLQRScanner.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("SCANNING BARCODE...");
             }
         }
         webcam.close();
         System.out.println(barCode); 
         
+<<<<<<< HEAD
         Node node = (Node) event.getSource();
         ViewManager view = new ViewManager(root);
         view.getScene("Screens/FXMLChecklistScreen.fxml", node);
+=======
+        try {
+            Database.insertQuery("INSERT INTO barcode " + "(barcodeID) "
+                    + "VALUES " + "('" + barCode + "')");
+            Node node = (Node) event.getSource();
+            ViewManager view = new ViewManager();
+            view.getScene("Screens/FXMLChecklistScreen.fxml", node);
+            
+        } catch (SQLException ex) {
+            System.out.println("DATABASE INFO; barcode " + barCode + " is al in gebruik.");
+            QRMessage.setText("Barcode " + barCode + " is al in gebruik!");
+        }
+        
+>>>>>>> origin/Develop
     }
 
  

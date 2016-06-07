@@ -18,11 +18,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+<<<<<<< HEAD
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+=======
+import javafx.scene.Node;
+>>>>>>> origin/Develop
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
@@ -50,6 +54,14 @@ public class FXMLChecklistScreenController extends FXMLScreen
     String lable = "lable";
     String condition1 = "condition1";
     String weight = "weight";
+    boolean bookedCounter;
+    boolean onTimeCounter;
+    boolean awbCounter;
+    boolean volumeCounter;
+    boolean weightCounter;
+    boolean lableCounter;
+    boolean conditionCounter;
+    
     //Booked buttons
     @FXML
     public ToggleButton NegativeBooked, NeutralBooked ,PositiveBooked ;
@@ -77,13 +89,170 @@ public class FXMLChecklistScreenController extends FXMLScreen
     @FXML
     private ToggleButton NegativeCondition, NeutralCondition, PositiveCondition;
     
+    @FXML
+    private ToggleButton rfcText;
+    
     
         @FXML
+    //BOOKED BUTTONS
     public void handleNegativeBooked(ActionEvent event) throws SQLException 
     {
-        Database.insertQuery("INSERT INTO barcode " + "(booked) "
-        + "VALUES " + (0));
+        updateData(barCode, "0", "booked");
+        bookedCounter = false; 
+    }
+    
+    public void handleNeutralBooked(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "booked");
+        bookedCounter = false;
+    }
+    
+    public void handlePositiveBooked(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "booked");
+        bookedCounter = true;
+    }
+     
+    //ONTIME BUTTONS
+    public void handleNegativeOnTime(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "0", "onTime");
+        onTimeCounter = false;
+    }
+    
+    public void handleNeutralOnTime(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "onTime");
+        onTimeCounter = false;
+    }
+    
+    public void handlePositiveOnTime(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "onTime");
+        onTimeCounter = true;
+    }
+    
+    //AWB BUTTONS
+    public void handleNegativeAWB(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "0", "awb");
+        awbCounter = false;
+    }
+    
+    public void handleNeutralAWB(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "awb");
+        awbCounter = false;
+    }
+    
+    public void handlePositiveAWB(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "awb");
+        awbCounter = true;
+    }  
+    
+    //VOLUME BUTTONS
+    public void handleNegativeVolume(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "0", "volume");
+        volumeCounter = false;
+    }
+    
+    public void handleNeutralVolume(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "volume");
+        volumeCounter = false;
+    }
+    
+    public void handlePositiveVolume(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "volume");
+        volumeCounter = true;
+    } 
+    
+    //WEIGHT BUTTONS
+    public void handleNegativeWeight(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "0", "weight");
+        weightCounter = false;
+    }
+    
+    public void handleNeutralWeight(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "weight");
+        weightCounter = false;
+    }
+    
+    public void handlePositiveWeight(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "weight");
+        weightCounter = true;
+    }
+    
+    //Lable BUTTONS
+    public void handleNegativeLabel(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "0", "lable");
+        lableCounter = false;
+    }
+    
+    public void handleNeutralLabel(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "lable");
+        lableCounter = false;
+    }
+    
+    public void handlePositiveLabel(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "lable");
+        lableCounter = true;
+    } 
+    
+    //CONDITION BUTTONS
+    public void handleNegativeCondition(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "0", "condition1");
+        conditionCounter = false;
+    }
+    
+    public void handleNeutralCondition(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, null, "condition1");
+        conditionCounter = false;
+    }
+    
+    public void handlePositiveCondition(ActionEvent event) throws SQLException 
+    {
+        updateData(barCode, "1", "condition1");
+        conditionCounter = true;
+    } 
+    
+    
+    //RFC BUTTON
+    public void handleRFC(ActionEvent event) throws SQLException 
+    {
+
+        if(bookedCounter && onTimeCounter && awbCounter && volumeCounter && weightCounter && lableCounter && conditionCounter) {
+            String passed = "passed";
+            String yes = "YES";
+            
+            //REDIRECT TO RFC SCREEN
+            Node node = (Node) event.getSource();
+            ViewManager view = new ViewManager();
+            view.getScene("Screens/FXMLHomeScreen.fxml", node);
+            
+            //UPDATE RFC
+            Database.insertQuery("UPDATE barcode" + " SET " + passed + "=" + "('" + yes + "')"
+            + " WHERE barcodeID=" + "('" + barCode + "')");
+            System.out.println("DATABASE UPDATE; RFC passed for barcode " + barCode + ".");
         
+    } else {
+            System.out.println("NOPE");
+            //REDIRECT TO SCANNER SCREEN
+            Node node = (Node) event.getSource();
+            ViewManager view = new ViewManager();
+            view.getScene("Screens/FXMLHomeScreen.fxml", node);
+        }
     } 
     
     @FXML
@@ -109,6 +278,7 @@ public class FXMLChecklistScreenController extends FXMLScreen
        
     }
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
@@ -132,21 +302,19 @@ public class FXMLChecklistScreenController extends FXMLScreen
         NeutralWeight.setText("Weight\n  " + weight);
         
         
-        try {
-            Database.insertQuery("INSERT INTO barcode " + "(barcodeID) "
-                    + "VALUES " + (barCode));
-        } catch (SQLException ex) {
-            Logger.getLogger(FXMLChecklistScreenController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
     }
     
         public String selectData(String textField, String barCode) throws SQLException {
-            
             ResultSet resultSet = Database.selectQuery("SELECT " + textField + " FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             textField = resultSet.getString(textField);
             return textField;
+        }
+        
+        public void updateData(String barCode, String value, String type) throws SQLException {
+            Database.insertQuery("UPDATE barcode" + " SET " + type + "=" + "('" + value + "')"
+            + " WHERE barcodeID=" + "('" + barCode + "')");
+            System.out.println("DATABASE UPDATE; Column " + type + " heeft waarde " + value + " bij barcode " + barCode + ".");
         }
 }
 
