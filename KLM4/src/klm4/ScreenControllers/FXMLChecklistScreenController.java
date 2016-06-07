@@ -82,7 +82,7 @@ public class FXMLChecklistScreenController implements Initializable
     public void handleNegativeBooked(ActionEvent event) throws SQLException 
     {
         updateData(barCode, "0", "booked");
-        bookedCounter = false;
+        bookedCounter = false; 
     }
     
     public void handleNeutralBooked(ActionEvent event) throws SQLException 
@@ -267,7 +267,6 @@ public class FXMLChecklistScreenController implements Initializable
     }
     
         public String selectData(String textField, String barCode) throws SQLException {
-            barCode = "0101234567890128";
             ResultSet resultSet = Database.selectQuery("SELECT " + textField + " FROM barcode_gegevens WHERE barcodeID = " + barCode);
             resultSet.next();
             textField = resultSet.getString(textField);
