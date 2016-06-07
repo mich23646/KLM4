@@ -27,6 +27,7 @@
                   <Button layoutX="113.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Scan" />
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgScanResult" fitHeight="150.0" fitWidth="200.0" layoutX="57.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="QRMessage" alignment="CENTER" layoutY="372.0" prefHeight="21.0" prefWidth="313.0" />
                </children></AnchorPane>
             <AnchorPane prefHeight="150.0" prefWidth="1086.0" styleClass="header1" GridPane.columnIndex="1" />
             <Pane prefHeight="200.0" prefWidth="200.0" styleClass="header" />

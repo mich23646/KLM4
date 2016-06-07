@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class KLM4 extends Application 
 {
     @Override
-    public void start(Stage stage) throws Exception 
+    public void start(Stage stage) throws Exception
     {
     stage.getIcons().add(
     new Image("/klm4/Resources/favicon.png"));
