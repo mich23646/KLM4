@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Michiel
+ * @author Jelle
  */
 public class KLM4 extends Application 
 {
